@@ -13,7 +13,12 @@ namespace NexusMart.Catalog.Service.Controllers
     [Route("products")]
     public class ProductsController : ControllerBase
     {
-        private readonly ProductsRepository productsRepository = new();
+        
+        private readonly IProductsRepository productsRepository;
+        public ProductsController(IProductsRepository productsRepository)
+        {
+            this.productsRepository = productsRepository;
+        }
         [HttpGet]
         public async Task<IEnumerable<ProductDto>> GetAsync()
         {
