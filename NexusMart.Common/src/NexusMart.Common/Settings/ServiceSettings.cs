@@ -1,4 +1,4 @@
-namespace NexusMart.Catalog.Service.Settings
+namespace NexusMart.Common.Settings
 {
     public class ServiceSettings
     {

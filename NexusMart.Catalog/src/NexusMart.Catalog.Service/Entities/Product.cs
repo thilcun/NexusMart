@@ -1,8 +1,10 @@
 using System;
+using NexusMart.Common;
 
 namespace NexusMart.Catalog.Service.Entities
 {
-    public class Product
+
+    public class Product : IEntity
     {
         public Guid Id { get; set; }
         public string Description { get; set; }

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using NexusMart.Catalog.Service.Dtos;
 using NexusMart.Catalog.Service.Entities;
-using NexusMart.Catalog.Service.Repositories;
+using NexusMart.Common;
 
 namespace NexusMart.Catalog.Service.Controllers
 {
@@ -14,8 +14,8 @@ namespace NexusMart.Catalog.Service.Controllers
     public class ProductsController : ControllerBase
     {
         
-        private readonly IProductsRepository productsRepository;
-        public ProductsController(IProductsRepository productsRepository)
+        private readonly IRepository<Product> productsRepository;
+        public ProductsController(IRepository<Product> productsRepository)
         {
             this.productsRepository = productsRepository;
         }

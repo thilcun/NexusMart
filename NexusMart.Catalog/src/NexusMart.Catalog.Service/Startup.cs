@@ -15,8 +15,9 @@ using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Driver;
-using NexusMart.Catalog.Service.Repositories;
-using NexusMart.Catalog.Service.Settings;
+using NexusMart.Catalog.Service.Entities;
+using NexusMart.Common.MongoDB;
+using NexusMart.Common.Settings;
 
 namespace NexusMart.Catalog.Service
 {
@@ -33,18 +34,10 @@ namespace NexusMart.Catalog.Service
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            BsonSerializer.RegisterSerializer(new GuidSerializer(BsonType.String));
-            BsonSerializer.RegisterSerializer(new DateTimeOffsetSerializer(BsonType.String));
-
+            
             serviceSettings = Configuration.GetSection(nameof(ServiceSettings)).Get<ServiceSettings>();
 
-            services.AddSingleton(serviceProvider => {
-                var mongoDbSettings = Configuration.GetSection(nameof(MongoDbSettings)).Get<MongoDbSettings>();
-                var mongoClient = new MongoClient(mongoDbSettings.ConnectionString);
-                return mongoClient.GetDatabase(serviceSettings.ServiceName);
-            });
-
-            services.AddSingleton<IProductsRepository, ProductsRepository>();
+            services.AddMongo().AddMongoRepository<Product>("Products");
 
             services.AddControllers(options => {
                 options.SuppressAsyncSuffixInActionNames = false;

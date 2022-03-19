@@ -28,6 +28,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\projects\\csharp\\NexusMart\\packages": {},
           "D:\\projects\\packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -47,9 +48,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
-            "MongoDB.Driver": {
+            "NexusMart.Common": {
               "target": "Package",
-              "version": "[2.11.6, )"
+              "version": "[1.0.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
