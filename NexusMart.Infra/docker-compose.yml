@@ -1,0 +1,15 @@
+# docker run -d --rm --name nexusmart-mongo -p 27019:27017 -v mongodbdata:/data/db mongo
+
+version: "3.8"
+
+services:
+  mongo:
+    image: nexusmart-mongo
+    container_name: nexusmart-mongo
+    ports:
+      - 27019:27017
+    volumes:
+      - mongodbdata:/data/db
+
+volumes:
+  mongodbdata:
