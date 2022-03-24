@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MassTransit;
 using Microsoft.AspNetCore.Mvc;
+using NexusMart.Catalog.Contracts;
 using NexusMart.Catalog.Service.Dtos;
 using NexusMart.Catalog.Service.Entities;
 using NexusMart.Common;
@@ -15,16 +17,18 @@ namespace NexusMart.Catalog.Service.Controllers
     {
         
         private readonly IRepository<Product> productsRepository;
-        public ProductsController(IRepository<Product> productsRepository)
+        private readonly IPublishEndpoint publishEndpoint;
+        public ProductsController(IRepository<Product> productsRepository, IPublishEndpoint publishEndpoint)
         {
             this.productsRepository = productsRepository;
+            this.publishEndpoint = publishEndpoint;
         }
         [HttpGet]
         public async Task<IEnumerable<ProductDto>> GetAsync()
         {
-           var products = (await productsRepository.GetAllAsync()).Select(products => products.AsDto());
+            var products = (await productsRepository.GetAllAsync()).Select(products => products.AsDto());
 
-           return products;
+            return products;
         }
 
         [HttpGet("{id}")]
@@ -45,10 +49,13 @@ namespace NexusMart.Catalog.Service.Controllers
                 Description = createdProductDto.Description,
                 Brand = createdProductDto.Brand,
                 Price = createdProductDto.Price,
+                Barcode = createdProductDto.Barcode,
                 CreatedDate = DateTimeOffset.UtcNow
             };
 
             await productsRepository.CreateAsync(product);
+
+            await publishEndpoint.Publish(new CatalogProductCreated(product.Id, product.Description, product.Brand, product.Barcode, product.Price));
 
             return CreatedAtAction(nameof(GetByIdAsync), new { id = product.Id }, product);
         }
@@ -63,8 +70,11 @@ namespace NexusMart.Catalog.Service.Controllers
             existingProduct.Description = updatedProductDto.Description;
             existingProduct.Brand = updatedProductDto.Brand;
             existingProduct.Price = updatedProductDto.Price;
+            existingProduct.Barcode = updatedProductDto.Barcode;
 
             await productsRepository.UpdateAsync(existingProduct);
+
+            await publishEndpoint.Publish(new CatalogProductUpdated(existingProduct.Id, existingProduct.Description, existingProduct.Brand, existingProduct.Barcode, existingProduct.Price));
 
             return NoContent();
         }
@@ -77,6 +87,8 @@ namespace NexusMart.Catalog.Service.Controllers
                 return NotFound();
 
             await productsRepository.RemoveAsync(product.Id);
+
+            await publishEndpoint.Publish(new CatalogProductDeleted(id));
 
             return NoContent();
         }

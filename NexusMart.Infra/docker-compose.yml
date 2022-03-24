@@ -4,12 +4,22 @@ version: "3.8"
 
 services:
   mongo:
-    image: nexusmart-mongo
+    image: mongo
     container_name: nexusmart-mongo
     ports:
       - 27019:27017
     volumes:
       - mongodbdata:/data/db
 
+  rabbitmq:
+    image: rabbitmq:management
+    container_name: nmrabbitmq
+    ports:
+      - 5673:5672
+      - 15673:15672
+    volumes:
+      - rabbitmqdata:/var/lib/nexusmart_rabbitmq
+    hostname: nexusmart-rabbitmq
 volumes:
   mongodbdata:
+  rabbitmqdata:

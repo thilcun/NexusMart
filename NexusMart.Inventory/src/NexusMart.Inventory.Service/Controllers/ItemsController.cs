@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using NexusMart.Common;
+using NexusMart.Inventory.Service.Clients;
 using NexusMart.Inventory.Service.Dtos;
 using NexusMart.Inventory.Service.Entities;
 
@@ -14,10 +15,12 @@ namespace NexusMart.Inventory.Service.Controllers
     public class ItemsController : ControllerBase  
     {
         private readonly IRepository<InventoryItem> itemsRepository;
+        private readonly CatalogClient catalogClient;
 
-        public ItemsController(IRepository<InventoryItem> itemsRepository)
+        public ItemsController(IRepository<InventoryItem> itemsRepository, CatalogClient catalogClient)
         {
             this.itemsRepository = itemsRepository;
+            this.catalogClient = catalogClient;
         }
         [HttpGet]
         public async Task<ActionResult<IEnumerable<InventoryItem>>> GetAsync(Guid storeId)
@@ -26,9 +29,16 @@ namespace NexusMart.Inventory.Service.Controllers
             {
                 return BadRequest();
             }
-            var items = (await itemsRepository.GetAllAsync(item => item.StoreId == storeId)).Select(item => item.AsDto());
+            
+            var catalogProducts = await catalogClient.GetCatalogProductsAsync();
+            var inventoryItemEntities = await itemsRepository.GetAllAsync(item => item.StoreId == storeId);
 
-            return Ok(items);
+            var inventoryItemDtos = inventoryItemEntities.Select(inventoryItem => {
+                var product = catalogProducts.SingleOrDefault(catalogProduct => catalogProduct.Id == inventoryItem.CatalogProductId);
+                return inventoryItem.AsDto(product.Description, product.Brand, product.Barcode);
+            });
+
+            return Ok(inventoryItemDtos);
         }
         [HttpPost]
         public async Task<ActionResult> PostAsync(CreatedItemDto createdItemDto)

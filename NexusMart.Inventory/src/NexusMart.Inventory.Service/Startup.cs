@@ -1,11 +1,17 @@
+using System;
+using System.Net.Http;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using NexusMart.Common.MongoDB;
+using NexusMart.Inventory.Service.Clients;
 using NexusMart.Inventory.Service.Entities;
+using Polly;
+using Polly.Timeout;
 
 namespace NexusMart.Inventory.Service
 {
@@ -24,6 +30,35 @@ namespace NexusMart.Inventory.Service
             services.AddMongo()
                     .AddMongoRepository<InventoryItem>("InventoryItems");
 
+            //Needed to create randomness on the waiting for timeout of clients
+            Random jitterer = new Random();
+
+            services.AddHttpClient<CatalogClient>(client => {
+                client.BaseAddress = new Uri("https://localhost:5001");
+            })
+            .AddTransientHttpErrorPolicy(builder => builder.Or<TimeoutRejectedException>().WaitAndRetryAsync(
+                5,
+                retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)) + TimeSpan.FromMilliseconds(jitterer.Next(0, 1000)),
+                onRetry: (outcome, timespan, retryAttempt) =>
+                {
+                    var serviceProvider = services.BuildServiceProvider();
+                    serviceProvider.GetService<ILogger<CatalogClient>>()?.LogWarning($"Delaying for {timespan.TotalSeconds} seconds, then making retry {retryAttempt}");
+                }
+            ))
+            .AddTransientHttpErrorPolicy(builder => builder.Or<TimeoutRejectedException>().CircuitBreakerAsync(
+                3,
+                TimeSpan.FromSeconds(15),
+                onBreak: (outcome, timespan) =>{
+                    var serviceProvider = services.BuildServiceProvider();
+                    serviceProvider.GetService<ILogger<CatalogClient>>()?.LogWarning($"Opening the circuit for {timespan.TotalSeconds} seconds...");
+                },
+                onReset: () => {
+                    var serviceProvider = services.BuildServiceProvider();
+                    serviceProvider.GetService<ILogger<CatalogClient>>()?.LogWarning($"Closing the circuit...");
+                }
+            ))
+            .AddPolicyHandler(Policy.TimeoutAsync<HttpResponseMessage>(1)); //Policy For Timeouts
+ 
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

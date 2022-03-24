@@ -7,7 +7,7 @@ namespace NexusMart.Catalog.Service
     {
         public static ProductDto AsDto(this Product product)
         {
-            return new ProductDto(product.Id, product.Description, product.Brand, product.Price, product.CreatedDate);
+            return new ProductDto(product.Id, product.Description, product.Brand, product.Barcode, product.Price, product.CreatedDate);
         }
     }
 }

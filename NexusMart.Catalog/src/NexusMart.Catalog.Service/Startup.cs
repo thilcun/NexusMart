@@ -1,21 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using MassTransit;
+using MassTransit.Definition;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using MongoDB.Bson;
-using MongoDB.Bson.Serialization;
-using MongoDB.Bson.Serialization.Serializers;
-using MongoDB.Driver;
 using NexusMart.Catalog.Service.Entities;
+using NexusMart.Common.MassTransit;
 using NexusMart.Common.MongoDB;
 using NexusMart.Common.Settings;
 
@@ -37,7 +29,8 @@ namespace NexusMart.Catalog.Service
             
             serviceSettings = Configuration.GetSection(nameof(ServiceSettings)).Get<ServiceSettings>();
 
-            services.AddMongo().AddMongoRepository<Product>("Products");
+            services.AddMongo().AddMongoRepository<Product>("Products")
+                    .AddMassTransitWithRabbitMq();
 
             services.AddControllers(options => {
                 options.SuppressAsyncSuffixInActionNames = false;

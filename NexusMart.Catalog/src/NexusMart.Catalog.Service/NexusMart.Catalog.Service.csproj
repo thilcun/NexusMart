@@ -5,8 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="NexusMart.Common" Version="1.0.0" />
+    <PackageReference Include="NexusMart.Common" Version="1.0.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NexusMart.Catalog.Contracts\NexusMart.Catalog.Contracts.csproj" />
   </ItemGroup>
 
 </Project>
