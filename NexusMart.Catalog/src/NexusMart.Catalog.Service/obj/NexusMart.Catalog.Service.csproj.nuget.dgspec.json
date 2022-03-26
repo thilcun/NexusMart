@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\projects\\csharp\\NexusMart\\NexusMart.Catalog\\src\\NexusMart.Catalog.Service\\NexusMart.Catalog.Service.csproj": {}
+    "d:\\projects\\csharp\\NexusMart\\NexusMart.Catalog\\src\\NexusMart.Catalog.Service\\NexusMart.Catalog.Service.csproj": {}
   },
   "projects": {
-    "D:\\projects\\csharp\\NexusMart\\NexusMart.Catalog\\src\\NexusMart.Catalog.Contracts\\NexusMart.Catalog.Contracts.csproj": {
+    "d:\\projects\\csharp\\NexusMart\\NexusMart.Catalog\\src\\NexusMart.Catalog.Contracts\\NexusMart.Catalog.Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects\\csharp\\NexusMart\\NexusMart.Catalog\\src\\NexusMart.Catalog.Contracts\\NexusMart.Catalog.Contracts.csproj",
+        "projectUniqueName": "d:\\projects\\csharp\\NexusMart\\NexusMart.Catalog\\src\\NexusMart.Catalog.Contracts\\NexusMart.Catalog.Contracts.csproj",
         "projectName": "NexusMart.Catalog.Contracts",
-        "projectPath": "D:\\projects\\csharp\\NexusMart\\NexusMart.Catalog\\src\\NexusMart.Catalog.Contracts\\NexusMart.Catalog.Contracts.csproj",
+        "projectPath": "d:\\projects\\csharp\\NexusMart\\NexusMart.Catalog\\src\\NexusMart.Catalog.Contracts\\NexusMart.Catalog.Contracts.csproj",
         "packagesPath": "C:\\Users\\Cunha\\.nuget\\packages\\",
-        "outputPath": "D:\\projects\\csharp\\NexusMart\\NexusMart.Catalog\\src\\NexusMart.Catalog.Contracts\\obj\\",
+        "outputPath": "d:\\projects\\csharp\\NexusMart\\NexusMart.Catalog\\src\\NexusMart.Catalog.Contracts\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -63,18 +63,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.411\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\projects\\csharp\\NexusMart\\NexusMart.Catalog\\src\\NexusMart.Catalog.Service\\NexusMart.Catalog.Service.csproj": {
+    "d:\\projects\\csharp\\NexusMart\\NexusMart.Catalog\\src\\NexusMart.Catalog.Service\\NexusMart.Catalog.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects\\csharp\\NexusMart\\NexusMart.Catalog\\src\\NexusMart.Catalog.Service\\NexusMart.Catalog.Service.csproj",
+        "projectUniqueName": "d:\\projects\\csharp\\NexusMart\\NexusMart.Catalog\\src\\NexusMart.Catalog.Service\\NexusMart.Catalog.Service.csproj",
         "projectName": "NexusMart.Catalog.Service",
-        "projectPath": "D:\\projects\\csharp\\NexusMart\\NexusMart.Catalog\\src\\NexusMart.Catalog.Service\\NexusMart.Catalog.Service.csproj",
+        "projectPath": "d:\\projects\\csharp\\NexusMart\\NexusMart.Catalog\\src\\NexusMart.Catalog.Service\\NexusMart.Catalog.Service.csproj",
         "packagesPath": "C:\\Users\\Cunha\\.nuget\\packages\\",
-        "outputPath": "D:\\projects\\csharp\\NexusMart\\NexusMart.Catalog\\src\\NexusMart.Catalog.Service\\obj\\",
+        "outputPath": "d:\\projects\\csharp\\NexusMart\\NexusMart.Catalog\\src\\NexusMart.Catalog.Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -91,6 +91,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "D:\\projects\\csharp\\NexusMart\\packages": {},
           "D:\\projects\\packages": {},
           "https://api.nuget.org/v3/index.json": {}
@@ -99,8 +100,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\projects\\csharp\\NexusMart\\NexusMart.Catalog\\src\\NexusMart.Catalog.Contracts\\NexusMart.Catalog.Contracts.csproj": {
-                "projectPath": "D:\\projects\\csharp\\NexusMart\\NexusMart.Catalog\\src\\NexusMart.Catalog.Contracts\\NexusMart.Catalog.Contracts.csproj"
+              "d:\\projects\\csharp\\NexusMart\\NexusMart.Catalog\\src\\NexusMart.Catalog.Contracts\\NexusMart.Catalog.Contracts.csproj": {
+                "projectPath": "d:\\projects\\csharp\\NexusMart\\NexusMart.Catalog\\src\\NexusMart.Catalog.Contracts\\NexusMart.Catalog.Contracts.csproj"
               }
             }
           }
@@ -117,7 +118,7 @@
           "dependencies": {
             "NexusMart.Common": {
               "target": "Package",
-              "version": "[1.0.1, )"
+              "version": "[1.0.2, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -143,7 +144,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.411\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     }

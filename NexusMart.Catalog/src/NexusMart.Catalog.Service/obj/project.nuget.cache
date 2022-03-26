@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qrq/hIR4xYoFD8a5kZkHErhSH1WaSwqKmm0oC/w4982Px9ddtulMr+1ylOEcECt2fkSDa5eGvDgbaJ4MVv3bOA==",
+  "dgSpecHash": "o7npU2Hh1IGGnp/HIc+4Kxrt09BMFYgiaAXtuuX3s2MMdZmzia2+g/lVVg6Fn+TDwy/IforrPkseuJnm7hgLpg==",
   "success": true,
-  "projectFilePath": "D:\\projects\\csharp\\NexusMart\\NexusMart.Catalog\\src\\NexusMart.Catalog.Service\\NexusMart.Catalog.Service.csproj",
+  "projectFilePath": "d:\\projects\\csharp\\NexusMart\\NexusMart.Catalog\\src\\NexusMart.Catalog.Service\\NexusMart.Catalog.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Cunha\\.nuget\\packages\\automatonymous\\5.1.1\\automatonymous.5.1.1.nupkg.sha512",
     "C:\\Users\\Cunha\\.nuget\\packages\\dnsclient\\1.3.1\\dnsclient.1.3.1.nupkg.sha512",
@@ -37,7 +37,7 @@
     "C:\\Users\\Cunha\\.nuget\\packages\\newid\\3.0.3\\newid.3.0.3.nupkg.sha512",
     "C:\\Users\\Cunha\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
     "C:\\Users\\Cunha\\.nuget\\packages\\newtonsoft.json.bson\\1.0.1\\newtonsoft.json.bson.1.0.1.nupkg.sha512",
-    "C:\\Users\\Cunha\\.nuget\\packages\\nexusmart.common\\1.0.1\\nexusmart.common.1.0.1.nupkg.sha512",
+    "C:\\Users\\Cunha\\.nuget\\packages\\nexusmart.common\\1.0.2\\nexusmart.common.1.0.2.nupkg.sha512",
     "C:\\Users\\Cunha\\.nuget\\packages\\rabbitmq.client\\6.2.1\\rabbitmq.client.6.2.1.nupkg.sha512",
     "C:\\Users\\Cunha\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\Cunha\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
@@ -119,7 +119,8 @@
     "C:\\Users\\Cunha\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\Cunha\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
     "C:\\Users\\Cunha\\.nuget\\packages\\system.xml.readerwriter\\4.3.1\\system.xml.readerwriter.4.3.1.nupkg.sha512",
-    "C:\\Users\\Cunha\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
+    "C:\\Users\\Cunha\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\Cunha\\.nuget\\packages\\nexusmart.catalog.contracts\\1.0.0\\nexusmart.catalog.contracts.1.0.0.nupkg.sha512"
   ],
   "logs": []
 }
