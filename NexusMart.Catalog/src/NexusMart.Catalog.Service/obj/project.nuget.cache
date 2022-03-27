@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "o7npU2Hh1IGGnp/HIc+4Kxrt09BMFYgiaAXtuuX3s2MMdZmzia2+g/lVVg6Fn+TDwy/IforrPkseuJnm7hgLpg==",
+  "dgSpecHash": "5XusgI1Bu6Nzpdhhu4ZhqdfXynMUeZIfftGHGwRRDy1JoK0Cxo4nzwIb4lD/e06ZUA7/K84lx7jR+hOR7Zxw6A==",
   "success": true,
-  "projectFilePath": "d:\\projects\\csharp\\NexusMart\\NexusMart.Catalog\\src\\NexusMart.Catalog.Service\\NexusMart.Catalog.Service.csproj",
+  "projectFilePath": "D:\\projects\\csharp\\NexusMart\\NexusMart.Catalog\\src\\NexusMart.Catalog.Service\\NexusMart.Catalog.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Cunha\\.nuget\\packages\\automatonymous\\5.1.1\\automatonymous.5.1.1.nupkg.sha512",
     "C:\\Users\\Cunha\\.nuget\\packages\\dnsclient\\1.3.1\\dnsclient.1.3.1.nupkg.sha512",

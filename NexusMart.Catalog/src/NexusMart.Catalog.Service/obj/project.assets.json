@@ -6168,11 +6168,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\projects\\csharp\\NexusMart\\NexusMart.Catalog\\src\\NexusMart.Catalog.Service\\NexusMart.Catalog.Service.csproj",
+      "projectUniqueName": "D:\\projects\\csharp\\NexusMart\\NexusMart.Catalog\\src\\NexusMart.Catalog.Service\\NexusMart.Catalog.Service.csproj",
       "projectName": "NexusMart.Catalog.Service",
-      "projectPath": "d:\\projects\\csharp\\NexusMart\\NexusMart.Catalog\\src\\NexusMart.Catalog.Service\\NexusMart.Catalog.Service.csproj",
+      "projectPath": "D:\\projects\\csharp\\NexusMart\\NexusMart.Catalog\\src\\NexusMart.Catalog.Service\\NexusMart.Catalog.Service.csproj",
       "packagesPath": "C:\\Users\\Cunha\\.nuget\\packages\\",
-      "outputPath": "d:\\projects\\csharp\\NexusMart\\NexusMart.Catalog\\src\\NexusMart.Catalog.Service\\obj\\",
+      "outputPath": "D:\\projects\\csharp\\NexusMart\\NexusMart.Catalog\\src\\NexusMart.Catalog.Service\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -6198,8 +6198,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "d:\\projects\\csharp\\NexusMart\\NexusMart.Catalog\\src\\NexusMart.Catalog.Contracts\\NexusMart.Catalog.Contracts.csproj": {
-              "projectPath": "d:\\projects\\csharp\\NexusMart\\NexusMart.Catalog\\src\\NexusMart.Catalog.Contracts\\NexusMart.Catalog.Contracts.csproj"
+            "D:\\projects\\csharp\\NexusMart\\NexusMart.Catalog\\src\\NexusMart.Catalog.Contracts\\NexusMart.Catalog.Contracts.csproj": {
+              "projectPath": "D:\\projects\\csharp\\NexusMart\\NexusMart.Catalog\\src\\NexusMart.Catalog.Contracts\\NexusMart.Catalog.Contracts.csproj"
             }
           }
         }

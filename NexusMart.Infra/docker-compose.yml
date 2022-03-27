@@ -13,13 +13,8 @@ services:
 
   rabbitmq:
     image: rabbitmq:management
-    container_name: nmrabbitmq
-    ports:
-      - 5672:5672
-      - 15672:15672
-    volumes:
-      - rabbitmqdata:/var/lib/nexusmart_rabbitmq
-    hostname: nexusmart-rabbitmq
-volumes:
-  mongodbdata:
-  rabbitmqdata:
+    container_name: k      +569+
+    999995+66 5554  configs:
+    
+    '
+    '
